@@ -1,0 +1,55 @@
+html, body {
+    height: 100%;
+	font-family: robotothin;
+	font-size: 100px;
+	background-color: black;
+	color: white;
+	text-align: center;
+	overflow: hidden;
+}
+
+#container {
+    display: table;
+    height: 100%;
+    width: 100%;
+    vertical-align: middle;
+}
+
+#row1, #row2 {
+    display: table-row;
+    height: 50%;
+}
+
+#time, #day , #meridian {
+    display: table-cell;
+    vertical-align: middle;
+    -webkit-transition: all 200ms ease 0s;
+    -moz-transition: all 200ms ease 0s;
+    -ms-transition: all 200ms ease 0s;
+    transition: all 200ms ease 0s;
+}
+
+#time:hover, #day:hover {
+    color: #33b5e5;
+}
+
+#meridian {
+	color: #111;
+	font-size: 64px;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+#meridian:hover {
+	color: #0099cc;
+}
+
+::selection {
+    background: black;
+    color: #99cc00;
+}
+
+#time {
+    font-size: 200px;
+}
