@@ -1,22 +1,24 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Awesome Clock</title>
-        <script src="jquery-2.0.0.js"></script>
-        <script src="clock.js"></script>
-        <link rel="stylesheet" href="font-face.css" />
-        <link rel="stylesheet" href="clock.css"/>
+        <script type="application/javascript" src="clock.js"></script>
+        <link type="text/css" rel="stylesheet" href="font-face.css" />
+        <link type="text/css" rel="stylesheet" href="clock.css"/>
     </head>
     <body onload="load()">
         <table id="container">
             <tr id="row1">
                 <td id="time"></td>
 				<td id="meridian"></td>
+				<td id="troll" style="display:none;"></td>
             </tr>
             <tr id="row2">
                 <td id="day"></td>
+				<td id="short"></td>
+				<td id="blah"><a id="code" href="https://github.com/gnustomp/clock">Code</a></td>
             </tr>
-        </div>
+        </table>
     </body>
 </html>
