@@ -1,3 +1,21 @@
+/* © 2013 James Ye, Simon Shields
+ *
+ *	This file is part of Clock.
+ *
+ *	Clock is free software: you can redistribute it and/or modify
+ *	it under the terms of the GNU General Public License as published by
+ *	the Free Software Foundation, either version 3 of the License, or
+ *	(at your option) any later version.
+ *
+ *	Clock is distributed in the hope that it will be useful,
+ *	but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *	GNU General Public License for more details.
+ *
+ *	You should have received a copy of the GNU General Public License
+ *	along with Clock.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 function getPrettyDate(date) {
 	var hrs = date.getHours();
 	var min = date.getMinutes().toString();
@@ -55,18 +73,14 @@ function load() {
 var MOUSE_HIDDEN = false;
 
 function hideMouse() {
-
-	//MOUSE_HIDDEN = true;
 	if (MOUSE_HIDDEN && document.body != null) {
 		document.body.className = "nocursor";
 	}
-
 }
 
 var lastX = "Hi";
 var lastY = "Hi";
 window.onmousemove = function(ev) {
-	//doBadStuffSoThatICanCatchAnException();
 	if (ev.x == lastX && ev.y == lastY) {
 		lastX = ev.x;
 		lastY = ev.y;

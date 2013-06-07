@@ -1,3 +1,21 @@
+/* 	© 2013 James Ye, Simon Shields
+ *
+ *	This file is part of Clock.
+ *
+ *	Clock is free software: you can redistribute it and/or modify
+ *	it under the terms of the GNU General Public License as published by
+ *	the Free Software Foundation, either version 3 of the License, or
+ *	(at your option) any later version.
+ *
+ *	Clock is distributed in the hope that it will be useful,
+ *	but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *	GNU General Public License for more details.
+ *
+ *	You should have received a copy of the GNU General Public License
+ *	along with Clock.  If not, see <http://www.gnu.org/licenses/>.
+ */
+ 
 html, body {
     height: 100%;
 	font-family: robotothin;
@@ -26,7 +44,7 @@ a:link, a:visited, a:hover, a:active {text-decoration:none;}
     height: 50%;
 }
 
-#time, #day , #meridian, #short, #code, #blah {
+#time, #day , #meridian, #short, #code, #blah , #tl, #about {
     display: table-cell;
     vertical-align: middle;
     -webkit-transition: all 200ms ease 0s;
@@ -39,9 +57,9 @@ a:link, a:visited, a:hover, a:active {text-decoration:none;}
     color: #33b5e5;
 }
 
-#meridian, #short, #code, #blah {
+#meridian, #short, #code, #blah, #tl, #about {
 	color: #050505;
-	font-size: 60px;
+	font-size: 48px;
 	position: absolute;
 }
 
@@ -55,12 +73,17 @@ a:link, a:visited, a:hover, a:active {text-decoration:none;}
 	right: 0;
 }
 
-#code , #blah{
+#code , #blah {
 	bottom: 0;
 	left: 0;
 }
 
-#meridian:hover, #short:hover, #code:hover {
+#tl, #about {
+	top: 0;
+	left: 0;
+}
+
+#meridian:hover, #short:hover, #code:hover, #tl:hover, #about:hover{
 	color: #ff4444;
 }
 
