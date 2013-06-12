@@ -16,14 +16,18 @@
  *	along with Clock.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+var SHOW_SECONDS = true;
+ 
 function getPrettyDate(date) {
 	var hrs = date.getHours();
 	var min = date.getMinutes().toString();
 	var sec = date.getSeconds().toString();
-	
 	if (hrs > 12) {
-		hrs = hrs - 12;
+		var meridian = "PM";
 	}
+	else var meridian = "AM"
+	hrs = hrs % 12;
+	
 	if (min.length == 1) {
 		min = "0" + min;
 	}
@@ -31,10 +35,17 @@ function getPrettyDate(date) {
 		sec = "0" + sec;
 	}
 	
-	return hrs + ":" + min + ":" + sec;
+	if (SHOW_SECONDS) {
+		document.getElementById("meridian").style.display="inline";
+		return hrs + ":" + min + ":" + sec;
+	}
+	if (!SHOW_SECONDS) {
+		document.getElementById("meridian").style.display="none";
+		return hrs + ":" + min + " " + meridian;
+	}
 }
 
-function determineMeridian(date) {
+function getMeridian(date) {
 	var hrs = date.getHours();
 	if (hrs > 12) {
 		return "PM"
@@ -60,13 +71,13 @@ function updateTime() {
 	}
 	
 	document.getElementById("time").innerHTML = getPrettyDate(now);
-	document.getElementById("meridian").innerHTML = determineMeridian(now);
+	document.getElementById("meridian").innerHTML = getMeridian(now);
 	document.getElementById("day").innerHTML = dow[now.getDay()] + ", " + now.getDate() + " " + months[now.getMonth()] + " " + now.getFullYear();
 	document.getElementById("short").innerHTML = date + "/" + month + "/" + shortYear;
 }
 
 function load() {
-	setInterval(updateTime, 1000);
+	setInterval(updateTime, 100);
 	updateTime();
 }
 
@@ -99,3 +110,16 @@ window.onmousemove = function(ev) {
 }
 MOUSE_HIDDEN = true;
 hideMouse();
+
+function toggleSeconds() {
+	SHOW_SECONDS = !SHOW_SECONDS;
+	var j = document.getElementById("showsec");
+	j.innerHTML = SHOW_SECONDS ? "Hide seconds" : "Show seconds";
+}
+
+function initialLoad() {
+	var j = document.getElementById("showsec");
+	if (!SHOW_SECONDS) {
+	j.innerHTML = "";
+	}
+}
