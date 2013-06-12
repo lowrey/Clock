@@ -16,7 +16,7 @@
  *	along with Clock.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-var SHOW_SECONDS = true;
+var SHOW_SECONDS = JSON.parse(localStorage["secs"]);
  
 function getPrettyDate(date) {
 	var hrs = date.getHours();
@@ -113,6 +113,7 @@ hideMouse();
 
 function toggleSeconds() {
 	SHOW_SECONDS = !SHOW_SECONDS;
+	localStorage["secs"] = SHOW_SECONDS;
 	var j = document.getElementById("showsec");
 	j.innerHTML = SHOW_SECONDS ? "Hide seconds" : "Show seconds";
 }
